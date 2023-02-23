@@ -1,0 +1,35 @@
+<html>
+    <header>
+        <title>EXA844 - Atividade 1</title>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Tilt+Warp&display=swap" rel="stylesheet">
+    </header>
+    <style>        
+        body {
+            font-family: 'Tilt Warp', cursive; 
+            text-align: center; 
+            margin-top: 10em;
+            align-items: center;
+        }        
+    </style>
+    <script>
+        function showContent(value){                        
+            if(value === 1){                
+                document.getElementById("content").removeAttribute("hidden");
+            } else{
+                document.getElementById("content").setAttribute("hidden", true);                
+            }
+        }
+    </script>
+    <body>
+        <h2 style="margin-top: 10em">EXA844 - Atividade 1</h2>
+        <button onClick={showContent(1)}>Show content</button>
+        <button onClick={showContent(2)}>Hide content</button>
+        <center>
+            <div style="max-width: 50em; display: flex;" id="content2">
+                <p id="content">"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum</p>
+            </div>
+        </center>
+    </body>
+</html>
