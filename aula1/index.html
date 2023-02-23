@@ -11,25 +11,54 @@
             text-align: center; 
             margin-top: 10em;
             align-items: center;
+            background-color: black;
+            color: white;
         }        
+        button {
+            background-color: white;
+            border: 2px solid white;
+            border-radius: 30px;
+            min-height: 36px;
+            min-width: 120px;
+            color: black;
+            font-family: 'Tilt Warp', cursive;
+            font-weight: 200;
+            cursor: pointer;
+        }
+        button:hover{
+            background-color: black;
+            color: white;            
+        }
     </style>
     <script>
         function showContent(value){                        
             if(value === 1){                
-                document.getElementById("content").removeAttribute("hidden");
+                document.getElementById("content").setAttribute("style", "display: block");
             } else{
-                document.getElementById("content").setAttribute("hidden", true);                
+                document.getElementById("content").setAttribute("style", "display: none");                
             }
+        }
+        function emptyAll(){
+            document.getElementById("all").setAttribute("style", "display: none");                
+            document.getElementById("emptyImage").setAttribute("style", "display: block");                
         }
     </script>
     <body>
-        <h2 style="margin-top: 10em">EXA844 - Atividade 1</h2>
-        <button onClick={showContent(1)}>Show content</button>
-        <button onClick={showContent(2)}>Hide content</button>
-        <center>
-            <div style="max-width: 50em; display: flex;" id="content2">
-                <p id="content">"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum</p>
-            </div>
+        <div id="all">
+            <h1 style="font-weight: 200;">EXA844 - Atividade 1</h1>
+            <button onClick={showContent(1)}>Show content</button>
+            <button style="margin-left: 40px" onClick={showContent(2)}>Hide content</button>
+            <center id="content">
+                <div style="max-width: 50em; display: flex; flex-wrap: wrap; align-items: center">
+                    <center>
+                        <p>"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum</p>
+                        <button onClick={emptyAll()}>Surprise!</button>
+                    </center>
+                </div>
+            </center>
+        </div>
+        <center id="emptyImage" style="display: none">
+            <img style="width: 700px; height: 500px;" src="https://media.tenor.com/2Qrxb60EYFoAAAAC/please-no-michael-scott.gif">
         </center>
     </body>
 </html>
